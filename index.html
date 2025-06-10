@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de Piste - Schœlcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Bienvenue à Schœlcher !</h1>
+    <p>Munis-toi de papier et crayon 📝, scanne les QR codes et résous les énigmes.</p>
+    <p>Le jeu coûte <strong>10 €</strong>. Tu peux utiliser un <em>code gratuit</em> si tu en as un.</p>
+  </header>
+
+  <main>
+    <!-- Paiement fictif -->
+    <section id="paymentSection">
+      <button onclick="payGame()">Payer 10 €</button>
+      <p>OU</p>
+      <input type="text" id="codeInput" placeholder="Code d’accès" />
+      <button onclick="useCode()">Valider le code</button>
+    </section>
+
+    <!-- Lancement du jeu -->
+    <section id="startSection" style="display: none;">
+      <button onclick="startGame()">Commencer le jeu</button>
+    </section>
+
+    <!-- Chronomètre -->
+    <p id="chrono" style="display: none;">Temps : 0s</p>
+
+    <!-- Carte -->
+    <div id="carte-container" style="display:none;">
+      <h2>Carte de Schœlcher</h2>
+      <img src="assets/carte_schoelcher.jpg" alt="Carte de Schœlcher" width="100%" />
+    </div>
+    <button onclick="toggleCarte()">Voir la carte</button>
+
+    <!-- Zone de jeu (affichage des énigmes) -->
+    <section id="gameZone" style="display: none;">
+      <!-- contenu des énigmes ici -->
+    </section>
+
+    <!-- Bouton pour passer à l’énigme suivante (QR code simulé) -->
+    <button id="scannerButton" onclick="nextEnigme()" style="display: none;">Scanner le QR Code</button>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
